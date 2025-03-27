@@ -4,10 +4,7 @@ https://github.com/user-attachments/assets/f89c3cff-2dd1-44c2-956f-38a50b07f6ad
 
 ## Prerequisites
 
-This project requires Pyth
-
-
-on 3.6 or higher.
+This project requires Python 3.6 or higher.
 
 ## Getting Started
 
