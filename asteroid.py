@@ -3,10 +3,12 @@ import random
 from circleshape import CircleShape
 from constants import ASTEROID_MIN_RADIUS
 class Asteroid(CircleShape):
+    destroyed_sfx = None
     def __init__(self, x, y, radius):
         super().__init__(x, y, radius)
 
     def split(self):
+        pygame.mixer.Sound.play(self.destroyed_sfx)
         self.kill()
         if self.radius <= ASTEROID_MIN_RADIUS:
             return

@@ -12,6 +12,7 @@ def main():
     print(f"Screen width: {SCREEN_WIDTH}")
     print(f"Screen height: {SCREEN_HEIGHT}")
 
+
     clock = pygame.time.Clock()
     dt = 0
 
@@ -24,6 +25,13 @@ def main():
     Asteroid.containers = (asteroids, updatable, drawable)
     AsteroidField.containers = (updatable)
     Shot.containers = (shots, updatable, drawable)
+
+    Player.shoot_sound = pygame.mixer.Sound("assets/sfx/laser-shot.mp3")
+    pygame.mixer.Sound.set_volume(Player.shoot_sound, 0.05)
+
+    Asteroid.destroyed_sfx = pygame.mixer.Sound("assets/sfx/debris-break.mp3")
+    pygame.mixer.Sound.set_volume(Asteroid.destroyed_sfx, 0.1)
+    
     
     asteroid_field = AsteroidField()
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
